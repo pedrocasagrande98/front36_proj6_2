@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eFood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="header" id="main-header">
+    <div class="container header__content">
+      <div class="header__top">
+        <nav class="header__nav">
+          <a href="#" class="header__link header__link--home">Restaurantes</a>
+        </nav>
+        <h1 class="header__logo">
+          <a href="/" class="logo-text">
+            efood
+            <svg class="logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z" />
+            </svg>
+          </a>
+        </h1>
+        <div class="header__cart">
+          <button class="header__link" id="cart-button">
+            0 produto(s) no carrinho
+            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; margin-left: 8px; vertical-align: middle;">
+              <path d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM1 2V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.28 15 7.17 14.89 7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C20.96 5.34 21 5.17 21 5C21 4.45 20.55 4 20 4H5.21L4.27 2H1ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+
+
+      </div>
+      <p class="header__slogan">Viva experiências gastronômicas no conforto da sua casa</p>
+    </div>
+
+
+
+  </header>
+
+
+
+  <main id="main-content">
+    <section id="restaurantes" class="restaurantes">
+      <div class="container"></div>
+    </section>
+
+    <section id="restaurante-detalhes" class="restaurante-detalhes" style="display:none;">
+      <div class="detalhes-header">
+        <div class="container">
+          <button class="detalhes__voltar" aria-label="Voltar para lista de restaurantes">Voltar</button>
+          <span class="detalhes__subtipo"></span>
+          <h2 class="detalhes__titulo"></h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cardapio-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logo">
+        <a href="/" class="logo-text">
+          efood
+          <svg class="logo-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z" />
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer__social">
+        <a href="#" aria-label="Instagram">@</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">t</a>
+      </p>
+      <p class="footer__copy">A efood é uma plataforma para divulgação de estabelecimentos, a responsabilidade pela entrega, qualidade dos produtos é toda do estabelecimento contratado.</p>
+    </div>
+  </footer>
+
+  <template id="restaurante-card">
+    <article class="restaurante-card">
+      <img class="restaurante-card__img" alt="">
+      <div class="restaurante-card__badges">
+        <span class="badge badge--destaque">Destaque</span>
+        <span class="badge badge--tipo"></span>
+      </div>
+      <div class="restaurante-card__body">
+        <div class="restaurante-card__header">
+          <h3 class="restaurante-card__nome"></h3>
+          <span class="restaurante-card__rating">
+            <span class="restaurante-card__stars">★</span>
+            <span class="restaurante-card__nota"></span>
+          </span>
+        </div>
+        <p class="restaurante-card__descricao"></p>
+        <button class="btn btn--primary restaurante-card__btn" data-id="">Saiba mais</button>
+      </div>
+    </article>
+  </template>
+
+  <template id="prato-card">
+    <article class="prato-card">
+      <img class="prato-card__img" alt="">
+      <div class="prato-card__body">
+        <h3 class="prato-card__nome"></h3>
+        <p class="prato-card__descricao"></p>
+        <p class="prato-card__porcao"></p>
+        <button class="btn btn--primary prato-card__btn"></button>
+      </div>
+    </article>
+  </template>
+
+  <div class="modal-overlay" id="modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modal-nome">
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modal-close" aria-label="Fechar">&times;</button>
+      <img class="modal__img" alt="">
+      <div class="modal__body">
+        <h2 class="modal__nome" id="modal-nome"></h2>
+        <p class="modal__descricao"></p>
+        <p class="modal__porcao"></p>
+        <button class="btn btn--primary modal__btn">Adicionar ao carrinho - <span class="modal__preco"></span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="carrinho-overlay" id="carrinho-overlay" style="display:none;">
+    <aside class="carrinho-sidebar">
+      <div class="carrinho-content">
+        <ul class="carrinho-lista" id="carrinho-lista"></ul>
+        <div class="carrinho-vazio" id="carrinho-vazio">Seu carrinho está vazio</div>
+        <div class="carrinho-footer" id="carrinho-footer" style="display:none;">
+          <div class="carrinho-total">
+            <span>Valor total</span>
+            <span id="carrinho-total-valor">R$ 0,00</span>
+          </div>
+          <button class="btn btn--primary carrinho-finalizar">Continuar com a entrega</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

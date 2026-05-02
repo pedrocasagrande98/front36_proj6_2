@@ -1,0 +1,739 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #E66767;
+  --cor-primaria-hover: #d45555;
+  --cor-fundo: #FFF8F2;
+  --cor-fundo-claro: #FFEBD9;
+  --cor-branca: #FFFFFF;
+  --cor-texto: #4A4A4A;
+  --cor-texto-claro: #8B8B8B;
+  --cor-destaque: #E66767;
+  --font-principal: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-principal);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main-content {
+  flex: 1;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  background-image: url('../assets/fundo.png');
+  background-repeat: repeat;
+  background-color: var(--cor-fundo-claro);
+  padding: 64px 0 40px;
+  text-align: center;
+}
+
+.header__content {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header__top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.header__nav {
+  flex: 1;
+  visibility: hidden; /* Mantém o espaço para centralizar a logo na Home */
+}
+
+.header__cart {
+  flex: 1;
+  display: block;
+}
+
+.header--compact .header__nav {
+  visibility: visible;
+}
+
+
+
+
+.header__cart {
+  text-align: right;
+}
+
+.header__link {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--cor-primaria);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+
+
+.header__logo {
+  flex: 0;
+  margin-bottom: 0;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--cor-primaria);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--cor-primaria);
+}
+
+.footer__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+
+
+
+
+.header__logo {
+  flex: 0;
+  margin: 0 auto;
+}
+
+.header--compact .header__logo {
+  margin: 0;
+}
+
+.header__slogan {
+  width: 100%;
+  max-width: 540px;
+  margin: 125px auto 0;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--cor-primaria);
+  text-align: center;
+}
+
+.header--compact .header__slogan {
+  display: none;
+}
+
+
+
+.hero {
+  display: none;
+}
+
+
+.hero__img {
+  width: 100%;
+  display: block;
+  height: 280px;
+  object-fit: cover;
+}
+
+.restaurantes {
+  padding: 80px 0 120px;
+}
+
+.restaurantes .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+  row-gap: 48px;
+}
+
+
+.restaurante-card {
+  background: var(--cor-branca);
+  border: 1px solid var(--cor-primaria);
+  position: relative;
+}
+
+.restaurante-card__img {
+  width: 100%;
+  height: 217px;
+  object-fit: cover;
+  display: block;
+}
+
+.header--compact {
+  padding: 40px 0;
+}
+
+
+.header--compact .header__slogan {
+  display: none;
+}
+
+.header--compact .header__link--home {
+  display: block;
+}
+
+.header__link--home {
+  display: none;
+}
+
+.header--compact .header__link--home {
+  display: block;
+}
+
+
+.restaurante-card__badges {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cor-branca);
+}
+
+.badge--destaque {
+  background: var(--cor-destaque);
+  display: none;
+}
+
+.badge--destaque.visible {
+  display: block;
+}
+
+.badge--tipo {
+  background: var(--cor-destaque);
+}
+
+.restaurante-card__body {
+  padding: 8px;
+}
+
+.restaurante-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.restaurante-card__nome {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cor-destaque);
+}
+
+.restaurante-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.restaurante-card__stars {
+  color: var(--cor-destaque);
+  font-size: 18px;
+}
+
+.restaurante-card__nota {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cor-destaque);
+}
+
+.restaurante-card__descricao {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--cor-destaque);
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn {
+  display: inline-block;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-principal);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn--primary {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo-claro);
+  width: 100%;
+}
+
+.btn--primary:hover {
+  background: var(--cor-primaria-hover);
+}
+
+.restaurante-card__btn {
+  margin-top: 0;
+}
+
+.restaurante-detalhes {
+  padding: 0 0 120px;
+}
+
+.detalhes-header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 32px 0;
+  margin-bottom: 56px;
+  position: relative;
+  height: 280px; /* Altura fixa para garantir visibilidade */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.detalhes-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.detalhes-header .container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.detalhes__voltar {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cor-branca);
+  cursor: pointer;
+  font-family: var(--font-principal);
+  padding: 0;
+}
+
+.detalhes__voltar:hover {
+  text-decoration: underline;
+}
+
+.detalhes__subtipo {
+  font-size: 32px;
+  font-weight: 100;
+  color: var(--cor-branca);
+  display: block;
+  margin-bottom: auto;
+}
+
+.detalhes__titulo {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--cor-branca);
+  margin-top: 0;
+}
+
+
+.cardapio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.prato-card {
+  background: var(--cor-primaria);
+  padding: 8px;
+}
+
+.prato-card__img {
+  width: 100%;
+  height: 167px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.prato-card__body {
+  color: var(--cor-fundo-claro);
+}
+
+.prato-card__nome {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.prato-card__descricao {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.prato-card__porcao {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--cor-fundo-claro);
+}
+
+.prato-card__btn {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-principal);
+  border: none;
+  cursor: pointer;
+  background: var(--cor-fundo-claro);
+  color: var(--cor-primaria);
+  transition: background-color 0.2s;
+}
+
+.prato-card__btn:hover {
+  background: var(--cor-branca);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-overlay--visible {
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background: var(--cor-primaria);
+  display: flex;
+  max-width: 1024px;
+  width: calc(100% - 32px);
+  position: relative;
+  color: var(--cor-branca);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--cor-branca);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal__img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.modal__body {
+  padding: 32px 32px 32px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__nome {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.modal__descricao {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.modal__porcao {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.modal__btn {
+  width: auto;
+  max-width: 238px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-principal);
+  border: none;
+  cursor: pointer;
+  background: var(--cor-fundo-claro);
+  color: var(--cor-primaria);
+  transition: background-color 0.2s;
+}
+
+.modal__btn:hover {
+  background: var(--cor-branca);
+}
+
+.modal__preco {
+  font-weight: 700;
+}
+
+.footer {
+  background-image: url('../assets/fundo.png');
+  background-repeat: repeat;
+  background-color: var(--cor-fundo-claro);
+  padding: 40px 0;
+  text-align: center;
+}
+
+
+/* .footer__logo já definido acima */
+
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--cor-destaque);
+  color: var(--cor-branca);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer__copy {
+  font-size: 10px;
+  color: var(--cor-destaque);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.mensagem-loading,
+.mensagem-erro {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 18px;
+  color: var(--cor-destaque);
+  padding: 40px 0;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--cor-primaria);
+  color: var(--cor-fundo-claro);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-principal);
+  z-index: 2000;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.toast--visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .header__slogan {
+    font-size: 24px;
+    margin-top: 80px;
+    padding: 0 16px;
+  }
+
+  .hero__img {
+    height: 200px;
+  }
+
+  .restaurantes {
+    padding: 48px 0 80px;
+  }
+
+  .restaurantes .container {
+    grid-template-columns: 1fr;
+  }
+
+  .cardapio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal__img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .modal__body {
+    padding: 24px 16px;
+  }
+
+  .detalhes__subtipo {
+    font-size: 24px;
+  }
+}
+
+.carrinho-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1001;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.carrinho-sidebar {
+  width: 100%;
+  max-width: 360px;
+  background: var(--cor-primaria);
+  padding: 32px 8px;
+  overflow-y: auto;
+}
+
+.carrinho-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.carrinho-item {
+  background: var(--cor-fundo-claro);
+  margin-bottom: 16px;
+  padding: 8px;
+  display: flex;
+  position: relative;
+}
+
+.carrinho-item__img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.carrinho-item__body {
+  color: var(--cor-primaria);
+}
+
+.carrinho-item__nome {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.carrinho-item__preco {
+  font-size: 14px;
+}
+
+.carrinho-item__remover {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: url('../assets/lixeira-de-reciclagem 1.png');
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+.carrinho-vazio {
+  color: var(--cor-branca);
+  text-align: center;
+  padding: 40px 0;
+  font-weight: 700;
+}
+
+.carrinho-total {
+  display: flex;
+  justify-content: space-between;
+  color: var(--cor-branca);
+  font-weight: 700;
+  margin: 40px 0 16px;
+}
+
+.carrinho-finalizar {
+  background: var(--cor-fundo-claro) !important;
+  color: var(--cor-primaria) !important;
+}
