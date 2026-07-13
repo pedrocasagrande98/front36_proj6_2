@@ -1,0 +1,24 @@
+<svg width="263" height="124" viewBox="0 0 263 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Moldura retangular vermelha com fundo branco -->
+  <rect x="4" y="4" width="255" height="116" fill="white" stroke="#E66767" stroke-width="8"/>
+  
+  <!-- Texto "efood" escrito com fonte Roboto Black -->
+  <text x="24" y="82" font-family="'Roboto', 'Arial Black', 'Helvetica', sans-serif" font-weight="900" font-size="58" fill="#E66767" letter-spacing="-3">efood</text>
+  
+  <!-- Garfo e Faca à direita -->
+  <g fill="#E66767" transform="translate(195, 38)">
+    <!-- Garfo -->
+    <g>
+      <rect x="0" y="0" width="2.5" height="15" rx="1.25" />
+      <rect x="4.5" y="0" width="2.5" height="15" rx="1.25" />
+      <rect x="9" y="0" width="2.5" height="15" rx="1.25" />
+      <path d="M 0 12 L 11.5 12 L 11.5 16 C 11.5 19.5 0 19.5 0 16 Z" />
+      <path d="M 4 18 L 4.5 44 C 4.5 46.5 7.5 46.5 7.5 44 L 7.5 18 Z" />
+    </g>
+    <!-- Faca -->
+    <g transform="translate(20, 0)">
+      <path d="M 7.5 0 C 3.5 0 1.5 4 1.5 10 L 1.5 22 L 7.5 22 Z" />
+      <path d="M 4 22 L 4.5 44 C 4.5 46.5 7.5 46.5 7.5 44 L 7.5 22 Z" />
+    </g>
+  </g>
+</svg>

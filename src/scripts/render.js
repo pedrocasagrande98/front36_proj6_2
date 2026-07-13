@@ -74,7 +74,7 @@ function mostrarDetalhes(restaurante) {
     clone.querySelector('.prato-card__porcao').textContent = `Serve: ${prato.porcao}`;
 
     const btn = clone.querySelector('.prato-card__btn');
-    btn.textContent = `Comprar - ${formatarPreco(prato.preco)}`;
+    btn.textContent = `Adicionar ao carrinho`;
     btn.addEventListener('click', () => abrirModal(prato));
 
     cardapioGrid.appendChild(clone);
