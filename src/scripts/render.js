@@ -8,7 +8,6 @@ const detalhesHeader = secaoDetalhes.querySelector('.detalhes-header');
 const detalhesSubtipo = secaoDetalhes.querySelector('.detalhes__subtipo');
 const detalhesTitulo = secaoDetalhes.querySelector('.detalhes__titulo');
 const cardapioGrid = secaoDetalhes.querySelector('.cardapio-grid');
-const btnVoltar = secaoDetalhes.querySelector('.detalhes__voltar');
 const mainHeader = document.getElementById('main-header');
 const mainHero = document.getElementById('main-hero');
 
@@ -95,10 +94,19 @@ function voltarParaLista() {
 
 
 const linkHome = document.querySelector('.header__link--home');
+const logoLinks = document.querySelectorAll('.logo-link');
 
-btnVoltar.addEventListener('click', voltarParaLista);
 linkHome.addEventListener('click', (e) => {
   e.preventDefault();
   voltarParaLista();
+});
+
+logoLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    if (secaoDetalhes.style.display === 'block') {
+      e.preventDefault();
+      voltarParaLista();
+    }
+  });
 });
 
